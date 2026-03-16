@@ -1,5 +1,5 @@
 #!/bin/bash
-# Start Apache
+set -e
 systemctl start httpd
 systemctl enable httpd
 echo "Server started successfully!"
