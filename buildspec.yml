@@ -5,15 +5,21 @@ phases:
       nodejs: 18
   pre_build:
     commands:
-      - echo "Starting build..."
+      - echo "Starting build process..."
   build:
     commands:
-      - echo "Build completed on $(date)"
-      - echo "Validating HTML files..."
-      - ls -la
+      - echo "Build started on $(date)"
+      - yum install -y dos2unix || apt-get install -y dos2unix || true
+      - dos2unix scripts/before_install.sh || sed -i 's/\r//' scripts/before_install.sh
+      - dos2unix scripts/after_install.sh || sed -i 's/\r//' scripts/after_install.sh
+      - dos2unix scripts/start_server.sh || sed -i 's/\r//' scripts/start_server.sh
+      - chmod +x scripts/before_install.sh
+      - chmod +x scripts/after_install.sh
+      - chmod +x scripts/start_server.sh
+      - echo "Scripts fixed and permissions set"
   post_build:
     commands:
-      - echo "Build successful!"
+      - echo "Build completed successfully!"
 artifacts:
   files:
     - '**/*'
