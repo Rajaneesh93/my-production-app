@@ -1,5 +1,4 @@
 #!/bin/bash
-# Stop Apache if running
+set -e
 systemctl stop httpd || true
-# Clean old deployment
 rm -rf /var/www/html/*
