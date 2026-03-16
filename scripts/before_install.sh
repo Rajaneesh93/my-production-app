@@ -2,3 +2,4 @@
 set -e
 systemctl stop httpd || true
 rm -rf /var/www/html/*
+mkdir -p /var/www/html
