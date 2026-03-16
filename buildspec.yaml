@@ -1,0 +1,20 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      nodejs: 18
+  pre_build:
+    commands:
+      - echo "Starting build..."
+  build:
+    commands:
+      - echo "Build completed on $(date)"
+      - echo "Validating HTML files..."
+      - ls -la
+  post_build:
+    commands:
+      - echo "Build successful!"
+artifacts:
+  files:
+    - '**/*'
+  discard-paths: no

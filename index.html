@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Production App</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <nav>
+    <div class="nav-brand">🚀 MyApp</div>
+    <div class="nav-info" id="server-info">Loading...</div>
+  </nav>
+
+  <main>
+    <div class="hero">
+      <h1>Welcome to My Production App</h1>
+      <p>Multi-AZ • Highly Available • Auto Scaling</p>
+      <button onclick="saveNote()">Save a Note</button>
+    </div>
+
+    <div class="card-grid">
+      <div class="card">
+        <h3>📝 Add Note</h3>
+        <input type="text" id="note-input" placeholder="Type something..."/>
+        <button onclick="saveNote()">Save to DynamoDB</button>
+      </div>
+      <div class="card">
+        <h3>📋 Your Notes</h3>
+        <div id="notes-list">Loading notes...</div>
+      </div>
+      <div class="card">
+        <h3>🖥️ Server Info</h3>
+        <div id="server-details">Fetching...</div>
+      </div>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
