@@ -1,5 +1,5 @@
 // Your API Gateway URL (you'll update this after setup)
-const API_BASE = '/api';
+const API_BASE = 'https://xbe6trpgp9.execute-api.us-east-1.amazonaws.com/api';
 
 // Load server info and notes when page opens
 window.onload = async () => {
